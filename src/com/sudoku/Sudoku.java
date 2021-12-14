@@ -1,5 +1,6 @@
 package com.sudoku;
 
+
 public class Sudoku {
     // !colore vincoli
     public static final String RED = "\u001B[31m";
@@ -123,13 +124,15 @@ public class Sudoku {
         if (checkRow(row, value) && (checkColumn(col, value)) && checkSquare(row, col, value)) {
             res = true;
         }
-
-       
-
         return res;
-
     }
-    
+    /**
+     * 
+     * @param row
+     * @param col
+     * @param value
+     * @return true if square is valid in Sudoku rule
+     */
     private boolean checkSquare(int row, int col, int value) {
         boolean res = true;
         int squareN = 3;
@@ -153,7 +156,12 @@ public class Sudoku {
         System.out.println("checkSquare: "+ res);
         return res;
     }
-
+    /**
+     * 
+     * @param row
+     * @param value
+     * @return true if row is valid in Sudoku rules
+     */
     private boolean checkRow(int row, int value) {
         boolean res = true;
         for (int i = 0; i < N; i++) {
@@ -165,7 +173,12 @@ public class Sudoku {
         return res;
 
     }
-
+  /**
+     * 
+     * @param row
+     * @param value
+     * @return true if column is valid in Sudoku rules
+     */
     private boolean checkColumn(int col, int value) {
         boolean res = true;
         for (int i = 0; i < N; i++) {
@@ -177,5 +190,20 @@ public class Sudoku {
         return res;
 
     }
+    /**
+     * 
+     * @return true se è pieno 
+     */
+    public boolean filled(){
+        int count=0;
+        for(int i=0; i< N;i++){
+            for(int j=0; j<N;j++){
+                if ( board[i][j] > 0){
+                    count++;
+                }
+            }
+        }
 
+        return ((count == board.length) ? true : false);
+    }
 }

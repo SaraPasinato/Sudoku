@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class App {
   
+    private static Scanner s = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
         Sudoku s= new Sudoku();
         //?inizializza i vincoli di gioco
@@ -19,7 +20,6 @@ public class App {
      * @param game sudouku empty board
      */
     private static void insertAllInitial(Sudoku game){
-        Scanner s= new Scanner(System.in);
         String res="s";
         int row,col,value=0;
         do{
@@ -69,7 +69,9 @@ public class App {
             }else{
                 System.out.println("il valore "+ value + " posto in ( "+ row + " , "+ col +") è: "+(game.isValid(row,col,value) ? "corretto": "sbagliato"));
             }
-                
+            
+            System.out.println("pieno : "+ game.filled());
+            
             
             System.out.println("-------------------------");
             System.out.println(game);
