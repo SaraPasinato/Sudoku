@@ -10,10 +10,24 @@ public class App {
        insertAllInitial(s);
         //!Giochiamo 
        insertValueChoice(s);
-
-      
+        //!Cancella gioco
+       deleteBoard(s);
       
        
+    }
+    private static void deleteBoard(Sudoku game) {
+        String res;
+        Scanner clean=new Scanner(System.in);
+
+        System.out.print("Vuoi cancellare il gioco ?(s,n):");
+        res=clean.next();
+       if(res.equals("s")){
+           game.resetBoard();
+           clean.close();
+       }else{
+           insertValueChoice(game);
+       }
+
     }
     /**
      * initialize board Constrained for game 
@@ -84,7 +98,7 @@ public class App {
 
         }while("s".equalsIgnoreCase(res));
 
-        user.close();
+       
 
     }
 }

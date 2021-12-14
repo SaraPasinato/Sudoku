@@ -1,5 +1,6 @@
 package com.sudoku;
 
+import javax.swing.border.Border;
 
 public class Sudoku {
     // !colore vincoli
@@ -205,5 +206,16 @@ public class Sudoku {
         }
 
         return ((count == board.length) ? true : false);
+    }
+
+    public void resetBoard() {
+        for (int row = 0; row < N; row++) {
+            for (int col = 0; col < N; col++) {
+                board[row][col] = 0;
+                start[row][col] = true;
+            }
+        }
+
+        System.out.println(this.toString());
     }
 }
