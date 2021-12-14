@@ -1,6 +1,6 @@
 package com.sudoku;
 
-import javax.swing.border.Border;
+
 
 public class Sudoku {
     // !colore vincoli

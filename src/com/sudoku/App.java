@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class App {
   
     private static Scanner s = new Scanner(System.in);
+    private static Scanner user = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
         Sudoku s= new Sudoku();
         //?inizializza i vincoli di gioco
@@ -64,7 +65,6 @@ public class App {
      * @param game
      */
     private static void insertValueChoice(Sudoku game){
-        Scanner user= new Scanner(System.in);
         String res="s";
         int row,col,value=0;
         do{
