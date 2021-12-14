@@ -9,6 +9,8 @@ public class App {
        insertAllInitial(s);
         //!Giochiamo 
        insertValueChoice(s);
+
+      
       
        
     }
@@ -41,9 +43,12 @@ public class App {
 
 
         }while("s".equalsIgnoreCase(res));
-
+      
     }
-
+    /**
+     * inserisce i valori utenti avvertendo se il valore non è corretto
+     * @param game
+     */
     private static void insertValueChoice(Sudoku game){
         Scanner user= new Scanner(System.in);
         String res="s";
@@ -76,6 +81,8 @@ public class App {
 
 
         }while("s".equalsIgnoreCase(res));
+
+        user.close();
 
     }
 }

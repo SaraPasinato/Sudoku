@@ -119,7 +119,7 @@ public class Sudoku {
         // ? controllare se ci sia il valore duplicato in nei valori di col fissa e row
         // ?dinamica
         // ? controllare se ci sia il valore duplicato in nei valori di matrice 3x3
-
+           
         if (checkRow(row, value) && (checkColumn(col, value)) && checkSquare(row, col, value)) {
             res = true;
         }
@@ -129,20 +129,24 @@ public class Sudoku {
         return res;
 
     }
-    //TODO: fix checkSquare
+    
     private boolean checkSquare(int row, int col, int value) {
         boolean res = true;
         int squareN = 3;
-        int bRow = (row) - ((row) % squareN);
+        int bRow = row-1;
         System.out.println("bRow: "+ bRow);
-        int bCol = (col) - ((col) % squareN);
+        int bCol = col -1;
         System.out.println("bCol: "+ bCol);
+        int count=0;
 
-        for(int r=bRow; r< (bRow+squareN);r++){
-            for(int c=bCol; c< (bCol+squareN);c++){
+        for(int r=0; r< squareN;r++){
+            for(int c=0; c<squareN;c++){
                if(board[r][c]==value){
                 System.out.println("board: "+ board[r][c] + " " + r +" "+ c);
-                   res=false;
+                count++;
+                if(count>=1){
+                    res=false;
+                }
                }
             }
         }
