@@ -129,7 +129,7 @@ public class Sudoku {
         return res;
 
     }
-
+    //TODO: fix checkSquare
     private boolean checkSquare(int row, int col, int value) {
         boolean res = true;
         int squareN = 3;
